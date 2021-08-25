@@ -1,0 +1,9 @@
+venv
+.idea
+pos.db
+staging
+.DS_Store
+__pycache__
+.coverage
+htmlcov
+
