@@ -1,9 +1,8 @@
 ## Objective
 
-For now, here is a brief description of the sample API and it's capabilities we aim to build.
+This is a sample python Point of Sale system API. Currently, it covers the following functional requirements:
 
 The system will only control the menu and order CRUD operations. The POS system should have the following capabilities
-
 - Retrieve a menu of all the items in the POS. An item can have description, a price, a quantity and an ID
 - Add a new item to the menu
 - Update an item by ID
@@ -15,30 +14,6 @@ The system will only control the menu and order CRUD operations. The POS system 
 	- Creating a successful order should return the order ID
 - Each route should perform business logic validation to prevent common errors. The order endpoint specifically should enforce payment correctness, and item availability.
 
-### Tech Stack choice:
-Here, we are building this API in python [FastAPI](https://fastapi.tiangolo.com/)
-
-Overall starting point for this project started from [this specific guide](https://fastapi.tiangolo.com/tutorial/sql-databases/?h=sqlalchemy#sql-relational-databases)
-
-### Tech stack:
-- Python
-- SQLite
-- ORM - [SQLAlchemy](https://www.sqlalchemy.org/)
-- [Pydantic](https://pydantic-docs.helpmanual.io/) - API input validation
-- [FastAPI](https://fastapi.tiangolo.com/) - web framework for building API
-- [Uvicorn](https://www.uvicorn.org/) - web server
-
-## Unit tests 
-Provide the project in a github repo or a zip file
-The project should run out of the box, if an included README is followed
-BONUS IF YOU HAVE TIME: An item can contain modifier groups, with each modifier group containing modifiers. For example
-
-Item: Burger
-Modifier Group 1: Toppings
-    Modifiers: Lettuce, Tomato, Pickles, Onions
-Modifier Group 2: Bun Choice
-    Modifiers: Sesame, Whole Wheat, Keto
-
 ### How to use (Docker)
 ```bash
 git clone git@github.com:Shahed-Zaman/POS-sampleAPI.git
@@ -47,7 +22,7 @@ docker run -d --name mysample-pos-server -p 80:80 mysample-pos-api
 ```
 As per the docker run command above, the API server will listen at port 80
 
-## How to use (in Dev environment)
+## How to use (in a Linux based Dev machine)
 ```bash
 git clone git@github.com:Shahed-Zaman/POS-sampleAPI.git
 cd POS-sampleAPI
@@ -64,17 +39,32 @@ python -m uvicorn src.main:app --reload
 ```
 Once started, you can see the API endpoints and related docs here: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
+### Tech Stack choice:
+Here, we are building this API in python [FastAPI](https://fastapi.tiangolo.com/)
+
+Overall starting point for this project started from [this specific guide](https://fastapi.tiangolo.com/tutorial/sql-databases/?h=sqlalchemy#sql-relational-databases)
+
+### Tech stack:
+- Python
+- SQLite
+- ORM - [SQLAlchemy](https://www.sqlalchemy.org/)
+- [Pydantic](https://pydantic-docs.helpmanual.io/) - API input validation
+- [FastAPI](https://fastapi.tiangolo.com/) - web framework for building API
+- [Uvicorn](https://www.uvicorn.org/) - web server
+
+## Unit tests 
+Testcase for this project are under `tests` dir. Please run `pytest`
+For development convenience, a script to bootstrap some dummy data is provided under `tests/create_dummydata.py`
+
 ## Next ToDo
-[ ✅] Unit tests
 
-[ ❌] Check/add DB level constraints
-    - on delete cascade
-    - prevent deleting
+[❌] Currently not covered: An item can contain modifier groups, with each modifier group containing modifiers. For example
+Item: Burger
+Modifier Group 1: Toppings
+    Modifiers: Lettuce, Tomato, Pickles, Onions
+Modifier Group 2: Bun Choice
+    Modifiers: Sesame, Whole Wheat, Keto
 
-[ ❌] Create Dockerfile, deployment notes
 
-[ ❌] Check why return types are not showing in swagger doc
 
-[ ❌] Research on modifier groups
 
-[❌ ] add to github

@@ -1,7 +1,7 @@
-from sqlalchemy import Boolean, Column, Integer, Float, Text, CheckConstraint
+from sqlalchemy import Column, Integer, Float, Text, CheckConstraint
 
-from core.database import Base, engine
-import json
+from core.database import Base
+
 
 class MenuItem(Base):
     __tablename__ = "menu"
@@ -15,4 +15,5 @@ class MenuItem(Base):
     )
 
     def __str__(self):
-        return "tablename: %s, id: %s, price: %s, description: %s, quantity: %s" %(self.__tablename__, self.id, self.price, self.description, self.quantity)
+        return "tablename: %s, id: %s, price: %s, description: %s, quantity: %s" % (
+        self.__tablename__, self.id, self.price, self.description, self.quantity)

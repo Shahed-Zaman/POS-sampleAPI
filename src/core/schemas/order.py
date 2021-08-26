@@ -1,7 +1,7 @@
 from typing import List
 from pydantic import BaseModel
 from typing import Optional
-from core.schemas.menu import MenuItemBase
+
 
 class OrderItem(BaseModel):
     id: int
@@ -11,20 +11,25 @@ class OrderItem(BaseModel):
 class OrderBase(BaseModel):
     items: List[OrderItem]
 
+
 class OrderCreate(OrderBase):
     note: Optional[str] = None
     payment: Optional[float] = None
 
+
 class Order(OrderBase):
     id: Optional[int] = None
     note: Optional[str] = None
+
     class Config:
         orm_mode = True
+
 
 class OrderViewItem(OrderItem):
     description: Optional[str]
     price: Optional[float]
 
+
 class OrderView(Order):
-    items : List[OrderViewItem]
+    items: List[OrderViewItem]
     payment: float
