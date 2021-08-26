@@ -1,6 +1,6 @@
 from fastapi import Response
 import json
-from ..utils.logger import logger
+from utils.logger import logger
 
 def setResponse(statusCode: int, message: str=None, returnBodyJson: dict={}):
     if message is not None:

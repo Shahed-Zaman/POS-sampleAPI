@@ -1,7 +1,7 @@
 from fastapi import Depends, FastAPI
-from .dependencies import get_token_header
-from .routers import menu, order
-from .core.database import Base, engine
+from dependencies import get_token_header
+from routers import menu, order
+from core.database import Base, engine
 import os
 
 # Create DB

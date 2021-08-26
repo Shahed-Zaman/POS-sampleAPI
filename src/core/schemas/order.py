@@ -1,7 +1,7 @@
 from typing import List
 from pydantic import BaseModel
 from typing import Optional
-from .menu import MenuItemBase
+from core.schemas.menu import MenuItemBase
 
 class OrderItem(BaseModel):
     id: int

@@ -1,11 +1,11 @@
 from fastapi import APIRouter,  Depends
 from sqlalchemy.orm import Session
-from ..core.schemas.menu import MenuItemCreate as MenuItemCreateSchema
-from ..core.schemas.menu import MenuUpdate as MenuUpdateSchema
-from ..core.schemas.menu import MenuItem as MenuItemSchema
-from ..service import menu as menuDAO
-from ..core.database import SessionLocal
-from ..routers.utils import *
+from core.schemas.menu import MenuItemCreate as MenuItemCreateSchema
+from core.schemas.menu import MenuUpdate as MenuUpdateSchema
+from core.schemas.menu import MenuItem as MenuItemSchema
+from service import menu as menuDAO
+from core.database import SessionLocal
+from routers.utils import *
 
 router = APIRouter(
     tags=["menu"],

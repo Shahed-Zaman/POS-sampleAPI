@@ -1,6 +1,6 @@
 from sqlalchemy import Boolean, Column, Integer, Float, Text, CheckConstraint
 
-from ..database import Base, engine
+from core.database import Base, engine
 import json
 
 class MenuItem(Base):

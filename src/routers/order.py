@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi import APIRouter,  Depends
 from sqlalchemy.orm import Session
-from ..core.schemas.menu import MenuItemCreate as MenuItemCreateSchema
-from ..core.schemas.order import OrderCreate as OrderCreateSchema
-from ..service import order as orderDAO
-from ..core.database import SessionLocal
-from ..routers.utils import *
+from core.schemas.menu import MenuItemCreate as MenuItemCreateSchema
+from core.schemas.order import OrderCreate as OrderCreateSchema
+from service import order as orderDAO
+from core.database import SessionLocal
+from routers.utils import *
 
 
 router = APIRouter(

@@ -1,8 +1,8 @@
 from sqlalchemy.orm import Session
-from ..core.models.menu import MenuItem as MenuItemModel
-from ..core.schemas.menu import MenuItemCreate as MenuItemCreateSchema
-from ..core.schemas.menu import MenuItem as MenuItemSchema
-from ..utils.logger import logger
+from core.models.menu import MenuItem as MenuItemModel
+from core.schemas.menu import MenuItemCreate as MenuItemCreateSchema
+from core.schemas.menu import MenuItem as MenuItemSchema
+from utils.logger import logger
 
 
 

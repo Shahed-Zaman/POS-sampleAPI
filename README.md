@@ -39,7 +39,30 @@ Modifier Group 1: Toppings
 Modifier Group 2: Bun Choice
     Modifiers: Sesame, Whole Wheat, Keto
 
+### How to use (Docker)
+```bash
+git clone git@github.com:Shahed-Zaman/POS-sampleAPI.git
+docker build -t mysample-pos-api ./POS-sampleAPI
+docker run -d --name mysample-pos-server -p 80:80 mysample-pos-api
+```
+As per the docker run command above, the API server will listen at port 80
 
+## How to use (in Dev environment)
+```bash
+git clone git@github.com:Shahed-Zaman/POS-sampleAPI.git
+cd POS-sampleAPI
+# assuming python3 and virtualenv is already installed and available in PATH of the dev machine
+# if not, please install python3 and virtualenv, add them to PATH
+virtualenv -p `which python3` venv3
+source venv3/bin/activate
+# Install required python modules; following command is expected to finish without any error
+pip install -r requirements.txt
+# Set PYTHONPATH so that python interpreter can find modules
+export PYTHONPATH=${PYTHONPATH}:${PWD}/src
+# Run the following command to start the web application using uvicorn
+python -m uvicorn src.main:app --reload
+```
+Once started, you can see the API endpoints and related docs here: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
 ## Next ToDo
 [ ✅] Unit tests
@@ -49,6 +72,8 @@ Modifier Group 2: Bun Choice
     - prevent deleting
 
 [ ❌] Create Dockerfile, deployment notes
+
+[ ❌] Check why return types are not showing in swagger doc
 
 [ ❌] Research on modifier groups
 

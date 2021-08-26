@@ -1,17 +1,17 @@
 from sqlalchemy.orm import Session
-from ..core.models.menu import MenuItem as MenuItemModel
-from ..core.schemas.order import Order as OrderSchema
-from ..core.models.order import OrderItem as OrderItemModel
-from ..core.models.order import Order as OrderModel
-from ..core.models.order import OrderItem as OrderItemModel
-from ..core.schemas.order import OrderView as OrderViewModel
-from ..core.schemas.order import OrderViewItem as OrderViewItemModel
+from core.models.menu import MenuItem as MenuItemModel
+from core.schemas.order import Order as OrderSchema
+from core.models.order import OrderItem as OrderItemModel
+from core.models.order import Order as OrderModel
+from core.models.order import OrderItem as OrderItemModel
+from core.schemas.order import OrderView as OrderViewModel
+from core.schemas.order import OrderViewItem as OrderViewItemModel
 
 
 
-from ..core.schemas.menu import MenuItem as MenuItemSchema
-from ..utils.logger import logger
-from ..service import menu as menuDAO
+from core.schemas.menu import MenuItem as MenuItemSchema
+from utils.logger import logger
+from service import menu as menuDAO
 
 def create_order(db: Session, order: OrderSchema) -> dict:
     logger.debug("Creating new order; order received: %s" %order)
