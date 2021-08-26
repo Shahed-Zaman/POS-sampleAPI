@@ -2,7 +2,7 @@
 - [How to use (Docker)](#how-to-use--docker-)
 - [How to use (in a Linux based Dev machine)](#how-to-use--in-a-linux-based-dev-machine-)
   * [Unit tests](#unit-tests)
-- [Tech Stack :](#tech-stack--)
+- [Tech Stack](#tech-stack)
 - [Next ToDo](#next-todo)
 
 ### Objective
@@ -51,7 +51,7 @@ Testcase for this project are under `tests` dir. Please run `pytest`
 
 For development convenience, a script to bootstrap some dummy data is provided under `tests/create_dummydata.py`
 
-### Tech Stack :
+### Tech Stack
 This API is built using python [FastAPI](https://fastapi.tiangolo.com/)
 
 Overall starting point for this project started from [this specific guide](https://fastapi.tiangolo.com/tutorial/sql-databases/?h=sqlalchemy#sql-relational-databases)
@@ -65,7 +65,10 @@ Overall starting point for this project started from [this specific guide](https
 
 ### Next ToDo
 
-[❌] Currently not covered: An item can contain modifier groups, with each modifier group containing modifiers. For example
+[❌] Currently not covered: An item can contain modifier groups, with each modifier group containing modifiers.
+
+For example:
+
 Item: Burger
 Modifier Group 1: Toppings
     Modifiers: Lettuce, Tomato, Pickles, Onions
