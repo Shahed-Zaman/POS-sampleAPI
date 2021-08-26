@@ -1,4 +1,11 @@
-## Objective
+- [Objective](#objective)
+- [How to use (Docker)](#how-to-use--docker-)
+- [How to use (in a Linux based Dev machine)](#how-to-use--in-a-linux-based-dev-machine-)
+  * [Unit tests](#unit-tests)
+- [Tech Stack :](#tech-stack--)
+- [Next ToDo](#next-todo)
+
+### Objective
 
 This is a sample python Point of Sale system API. Currently, it covers the following functional requirements:
 
@@ -22,7 +29,7 @@ docker run -d --name mysample-pos-server -p 80:80 mysample-pos-api
 ```
 As per the docker run command above, the API server will listen at port 80
 
-## How to use (in a Linux based Dev machine)
+### How to use (in a Linux based Dev machine)
 ```bash
 git clone git@github.com:Shahed-Zaman/POS-sampleAPI.git
 cd POS-sampleAPI
@@ -39,12 +46,15 @@ python -m uvicorn src.main:app --reload
 ```
 Once started, you can see the API endpoints and related docs here: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
-### Tech Stack choice:
-Here, we are building this API in python [FastAPI](https://fastapi.tiangolo.com/)
+#### Unit tests 
+Testcase for this project are under `tests` dir. Please run `pytest`
+
+For development convenience, a script to bootstrap some dummy data is provided under `tests/create_dummydata.py`
+
+### Tech Stack :
+This API is built using python [FastAPI](https://fastapi.tiangolo.com/)
 
 Overall starting point for this project started from [this specific guide](https://fastapi.tiangolo.com/tutorial/sql-databases/?h=sqlalchemy#sql-relational-databases)
-
-### Tech stack:
 - Python
 - SQLite
 - ORM - [SQLAlchemy](https://www.sqlalchemy.org/)
@@ -52,11 +62,8 @@ Overall starting point for this project started from [this specific guide](https
 - [FastAPI](https://fastapi.tiangolo.com/) - web framework for building API
 - [Uvicorn](https://www.uvicorn.org/) - web server
 
-## Unit tests 
-Testcase for this project are under `tests` dir. Please run `pytest`
-For development convenience, a script to bootstrap some dummy data is provided under `tests/create_dummydata.py`
 
-## Next ToDo
+### Next ToDo
 
 [❌] Currently not covered: An item can contain modifier groups, with each modifier group containing modifiers. For example
 Item: Burger
